@@ -1,0 +1,66 @@
+{-
+Define isLeapYear :: Int -> Bool.
+Use if-then-else to check:
+Divisible by 400: True
+Divisible by 100 but not 400: False
+Divisible by 4: True
+Otherwise: False
+Test with isLeapYear 2000, isLeapYear 1900, and isLeapYear 2024.
+-}
+
+isLeapYear :: Int -> Bool
+isLeapYear x =
+  if mod x 400 == 0
+    then True
+      else if mod x 100 == 0
+        then False
+          else if mod x 4 == 0
+            then True
+              else False
+              
+main :: IO ()
+main = do
+  print $ isLeapYear 2024
+
+
+
+{-
+Define isLeapYear :: Int -> Bool.
+Use gaurds to check if:
+Divisible by 400: True
+Divisible by 100 but not 400: False
+Divisible by 4: True
+Otherwise: False
+Test with isLeapYear 2000, isLeapYear 1900, and isLeapYear 2024.
+-}
+
+isLeapYear :: Int -> Bool
+isLeapYear x
+  | mod x 400 == 0 = True
+  | mod x 100 == 0 = False
+  | mod x 4 == 0 = True
+  | otherwise = False
+      
+              
+main :: IO ()
+main = do
+  print $ isLeapYear 2024
+
+
+
+  {-
+Define maxOfThree :: Int -> Int -> Int -> Int.
+Use let to store intermediate max values.
+Return the maximum of the three numbers.
+Test with maxOfThree 10 20 15 and maxOfThree 5 25 10.
+-}
+
+maxOfThree :: Int -> Int -> Int -> Int
+maxOfThree x y z =
+  let maxOfxy = max x y
+    in max maxOfxy z
+      
+              
+main :: IO ()
+main = do
+  print $ maxOfThree 5 25 10
